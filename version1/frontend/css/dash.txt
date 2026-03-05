@@ -1,0 +1,126 @@
+:root {
+	--primary-color: #ff6b35;
+	--secondary-color: #2e86ab;
+	--accent-color: #f7f7f7;
+	--text-color: #2d3142;
+	--text-second: #ffffff;
+	--border-color: #4caf50;
+	--succes-color: #ffc107;
+	--error-color: #f44336;
+	--border-radius: 10px;
+	--box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	--transition: all 0.3s ease;
+	--sidebar-width: 280px;
+	--header-height: 70px;
+	--card-padding: 20px;
+	--card-radius: 12px;
+	--box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+	display: flex;
+	min-height: 100vh;
+	background: #f5f6fa;
+	overflow-x: hidden;
+}
+
+.sidepanel {
+	width: var(--sidebar-width);
+	height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidepanel-header {
+	padding: 20px;
+	text-align: center;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidepanel-nav {
+	display: flex;
+	flex-direction: column;
+	padding: 20px 0;
+	flex: 1;
+}
+
+.sidepanel-nav a {
+	padding: 20px;
+	font-size: 22px;
+}
+
+.main-content {
+	flex: 1;
+	margin-left: var(--sidebar-width);
+	background: #f5f6fa;
+	align-items: center;
+}
+.main-content-header {
+	height: var(--header-height);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 30px;
+	position: sticky;
+	top: 0;
+	box-shadow: var(--box-shadow);
+}
+
+.main-content-header h1 {
+	font-size: 1.5em;
+	color: var(--dark-color);
+	font-weight: 600;
+}
+
+.left-side-header {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.right-side-header {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.stats-grid {
+	display: flex;
+	padding: 2rem;
+	justify-content: center;
+	gap: 2rem;
+}
+
+.stat-card {
+	display: flex;
+	align-items: center;
+	padding: var(--card-padding);
+	border-radius: var(--card-radius);
+	box-shadow: var(--box-shadow);
+}
+
+.stat-icon {
+	font-size: 3rem;
+	padding: 1rem;
+}
+
+.charts-row {
+	display: flex;
+}
+
+.chart-card {
+	padding: var(--card-padding);
+	border-radius: var(--card-radius);
+	box-shadow: var(--box-shadow);
+}
+
+.section-card {
+	display: flex;
+	flex-direction: column;
+}
+
+.section-header {
+	display: flex;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 2 | Dashboard</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../Admin/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../Admin/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../Admin/bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="../Admin/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="../Admin/dist/css/skins/skin-blue.min.css">
+  
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+
+<!-- Contenedores para componentes dinámicos -->
+<div id="header-container"></div>
+<div id="sidebar-container"></div>
+
+<!-- Content -->
+<div class="content-wrapper">
+  <section class="content-header">
+    <h1>
+      Panel Principal
+      <small>Dashboard de AstroNode</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+      <li class="active">Dashboard</li>
+    </ol>
+  </section>
+
+  <section class="content container-fluid">
+    
+    <!-- Aquí va tu contenido personalizado -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box">
+          <div class="box-header with-border">
+            <h3 class="box-title">Bienvenido</h3>
+          </div>
+          <div class="box-body">
+            <p>Contenido del dashboard aquí...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</div>
+<!-- ./wrapper -->
+
+<!-- Footer container -->
+<div id="footer-container"></div>
+
+<!-- Scripts container -->
+<div id="scripts-container"></div>
+
+<!-- Cargar componentes dinámicamente -->
+<script>
+  // Función para cargar componentes HTML
+  function loadComponent(url, containerId) {
+    return fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Error loading ' + url);
+        }
+        return response.text();
+      })
+      .then(data => {
+        const container = document.getElementById(containerId);
+        if (container) {
+          container.innerHTML = data;
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        const container = document.getElementById(containerId);
+        if (container) {
+          container.innerHTML = '<p style="color:red">Error cargando ' + url + '</p>';
+        }
+      });
+  }
+
+  // Cargar todos los componentes cuando la página esté lista
+  document.addEventListener('DOMContentLoaded', function() {
+    Promise.all([
+      loadComponent('./components/header.html', 'header-container'),
+      loadComponent('./components/sidebar.html', 'sidebar-container'),
+      loadComponent('./components/footer.html', 'footer-container'),
+      loadComponent('./components/scripts.html', 'scripts-container')
+    ]).then(() => {
+      console.log('Todos los componentes cargados correctamente');
+    }).catch(error => {
+      console.error('Error cargando componentes:', error);
+    });
+  });
+</script>
+
+</body>
+</html>

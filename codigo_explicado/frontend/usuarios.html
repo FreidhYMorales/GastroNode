@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>AdminLTE 2 | Usuarios</title>
+        <meta
+            content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+            name="viewport"
+        />
+
+        <!-- CSS -->
+        <link
+            rel="stylesheet"
+            href="./Admin/bower_components/bootstrap/dist/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="./Admin/bower_components/font-awesome/css/font-awesome.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="./Admin/bower_components/Ionicons/css/ionicons.min.css"
+        />
+        <link rel="stylesheet" href="./Admin/dist/css/AdminLTE.min.css" />
+        <link
+            rel="stylesheet"
+            href="./Admin/dist/css/skins/skin-blue.min.css"
+        />
+
+        <!-- Google Font -->
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+        />
+    </head>
+
+    <body class="hold-transition skin-blue sidebar-mini">
+        <!-- Contenedores para componentes dinámicos -->
+        <div id="header-container"></div>
+        <div id="sidebar-container"></div>
+
+        <!-- Content -->
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    Gestión de Usuarios
+                    <small>Administrar usuarios del sistema</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="./dashboard.html"
+                            ><i class="fa fa-dashboard"></i> Inicio</a
+                        >
+                    </li>
+                    <li class="active">Usuarios</li>
+                </ol>
+            </section>
+
+            <section class="content container-fluid">
+                <!-- Tabla de usuarios -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Lista de Usuarios</h3>
+                                <div class="box-tools pull-right">
+                                    <button
+                                        class="btn btn-primary btn-sm"
+                                        data-toggle="modal"
+                                        data-target="#modal-agregar"
+                                    >
+                                        <i class="fa fa-plus"></i> Agregar
+                                        Usuario
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <table
+                                    class="table table-bordered table-striped"
+                                >
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nombre</th>
+                                            <th>Email</th>
+                                            <th>Rol</th>
+                                            <th>Estado</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Alexander Pierce</td>
+                                            <td>alexander@example.com</td>
+                                            <td>
+                                                <span
+                                                    class="label label-success"
+                                                    >Administrador</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="label label-success"
+                                                    >Activo</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <button
+                                                    class="btn btn-info btn-xs"
+                                                >
+                                                    <i class="fa fa-edit"></i>
+                                                    Editar
+                                                </button>
+                                                <button
+                                                    class="btn btn-danger btn-xs"
+                                                >
+                                                    <i class="fa fa-trash"></i>
+                                                    Eliminar
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Sarah Smith</td>
+                                            <td>sarah@example.com</td>
+                                            <td>
+                                                <span class="label label-info"
+                                                    >Editor</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="label label-success"
+                                                    >Activo</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <button
+                                                    class="btn btn-info btn-xs"
+                                                >
+                                                    <i class="fa fa-edit"></i>
+                                                    Editar
+                                                </button>
+                                                <button
+                                                    class="btn btn-danger btn-xs"
+                                                >
+                                                    <i class="fa fa-trash"></i>
+                                                    Eliminar
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>John Doe</td>
+                                            <td>john@example.com</td>
+                                            <td>
+                                                <span
+                                                    class="label label-warning"
+                                                    >Usuario</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <span class="label label-danger"
+                                                    >Inactivo</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <button
+                                                    class="btn btn-info btn-xs"
+                                                >
+                                                    <i class="fa fa-edit"></i>
+                                                    Editar
+                                                </button>
+                                                <button
+                                                    class="btn btn-danger btn-xs"
+                                                >
+                                                    <i class="fa fa-trash"></i>
+                                                    Eliminar
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="box-footer clearfix">
+                                <ul
+                                    class="pagination pagination-sm no-margin pull-right"
+                                >
+                                    <li><a href="#">«</a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">»</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ./wrapper -->
+
+        <!-- Footer container -->
+        <div id="footer-container"></div>
+
+        <!-- Scripts container -->
+        <div id="scripts-container"></div>
+
+		<!-- Script para cargar los compontentes al HTML -->
+        <script src="./js/cargar_componentes.js"></script>
+    </body>
+</html>
